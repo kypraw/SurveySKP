@@ -28,7 +28,13 @@ Route::group(['middleware' => ['auth']], function(){
     ]);
 
     Route::get('surveys',[
+        'middleware' => 'needSurvey',
         'uses' => 'SurveyController@getSurveys',
         'as' => 'surveys'
     ]);
 });
+
+Route::get('terimakasih', [
+    'uses' => 'SurveyController@getTerimaKasih',
+    'as' => 'terimakasih'
+]);

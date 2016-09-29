@@ -3,6 +3,7 @@
     <head>
         <title>Survey Kepuasan Pengguna</title>
         <link rel="stylesheet" href="{{ URL::to('src/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ URL::to('src/css/app.css') }}">
 
         <!--optimize mobile experience-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
