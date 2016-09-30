@@ -9,8 +9,8 @@
         @endif
         <div class="col-md-6 surveygrid">
             <div class="row">
-                <p class="title"><strong>{{$survey->id . ". " . $survey->title }}</strong>
-                <input type="checkbox" name="survey[]" value="{{ $survey->id }}"></p>
+                <p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}">
+                <strong>{{$survey->id . ". " . $survey->title }}</strong></p>
             </div>
             <div class="row deskripsisurvey">
                 <p>{{ $survey->deskripsi }}</p>

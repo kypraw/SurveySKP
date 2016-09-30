@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 Use App\Survey;
 
 class SurveyController extends Controller
@@ -12,8 +13,10 @@ class SurveyController extends Controller
     }
 
     public function postSurveys(Request $request){
-        $surveyArr = implode("," , $request['survey']);
-        echo($surveyArr);
+        $surveyChoosen = $request['survey'];
+        //tampilkan pertanyaan dari survey yang dipilih
+        $surveyQuestion = DB::table('questions')->whereIn('survey_id', $surveyChoosen)->get();
+        return view('surveys.fillSurvey', ['questionArr' => $surveyQuestion]);
     }
 
     public function getTerimaKasih(){
