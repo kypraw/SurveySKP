@@ -21,16 +21,21 @@ Route::group(['middleware' => ['guest']], function(){
     ]);
 });
 
-Route::group(['middleware' => ['auth']], function(){
-    Route::get('logout', [
+Route::get('logout', [
+        'middleware' => 'auth',
         'uses' => 'AuthController@getLogout',
         'as' => 'logout'
     ]);
 
+Route::group(['middleware' => ['auth', 'needSurvey']], function(){
     Route::get('surveys',[
-        'middleware' => 'needSurvey',
         'uses' => 'SurveyController@getSurveys',
         'as' => 'surveys'
+    ]);
+
+    Route::post('surveys', [
+        'uses' => 'SurveyController@postSurveys',
+        'as' => 'surveys.post'
     ]);
 });
 

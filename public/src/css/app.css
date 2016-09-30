@@ -1,0 +1,11 @@
+p{
+    text-align: justify;
+}
+
+p.title{
+    font-size: 18px;
+}
+
+.col-md-6.surveygrid{
+    padding-right: 50px;
+}
