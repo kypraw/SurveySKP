@@ -16,7 +16,8 @@ class SurveyController extends Controller
         $surveyChoosen = $request['survey'];
         //tampilkan pertanyaan dari survey yang dipilih
         $surveyQuestion = DB::table('questions')->whereIn('survey_id', $surveyChoosen)->get();
-        return view('surveys.fillSurvey', ['questionArr' => $surveyQuestion]);
+        $grouped = $surveyQuestion->groupBy('survey_id');
+        return view('surveys.fillSurvey', ['grouped' => $grouped]);
     }
 
     public function getTerimaKasih(){

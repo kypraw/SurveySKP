@@ -1,4 +1,6 @@
-@foreach($questionArr as $question)
-    <p>{{$question->survey_id}}
-    <p>{{$question->pertanyaan}}
+@foreach($grouped as $group)
+    <p>{{$group->first()->survey_id}}
+    @foreach($group as $g)
+        <p>{{$g->pertanyaan}}
+    @endforeach
 @endforeach
