@@ -37,6 +37,11 @@ Route::group(['middleware' => ['auth', 'needSurvey']], function(){
         'uses' => 'SurveyController@postSurveys',
         'as' => 'surveys.post'
     ]);
+
+    Route::post('answers', [
+        'uses' => 'AnswerController@postAnswers',
+        'as' => 'answers.post'
+    ]);
 });
 
 Route::get('terimakasih', [

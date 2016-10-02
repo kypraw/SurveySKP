@@ -15,7 +15,7 @@ class SurveyController extends Controller
     public function postSurveys(Request $request){
         $surveyChoosen = $request['survey'];
         //tampilkan pertanyaan dari survey yang dipilih
-        $surveyQuestion = DB::table('questions')->whereIn('survey_id', $surveyChoosen)->get();
+        $surveyQuestion = DB::table('surveys')->leftJoin('questions', 'surveys.id', '=', 'questions.survey_id')->whereIn('survey_id', $surveyChoosen)->get();
         $grouped = $surveyQuestion->groupBy('survey_id');
         return view('surveys.fillSurvey', ['grouped' => $grouped]);
     }

@@ -2,6 +2,7 @@
 
 @section('content')
     <h3>Layanan Apa yang Pernah Anda Gunakan?</h3>
+    <br>
     <form action="{{ route('surveys.post') }}" method="post">
     @foreach($surveys as $survey)
         @if($survey->id % 2 == 1)
@@ -9,8 +10,8 @@
         @endif
         <div class="col-md-6 surveygrid">
             <div class="row">
-                <p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}">
-                <strong>{{$survey->id . ". " . $survey->title }}</strong></p>
+                <label><p class="title-fill"><input type="checkbox" name="survey[]" value="{{ $survey->id }}">
+                <strong>{{$survey->id . ". " . $survey->title }}</strong></p></label>
             </div>
             <div class="row deskripsisurvey">
                 <p>{{ $survey->deskripsi }}</p>

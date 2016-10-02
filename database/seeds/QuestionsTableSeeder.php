@@ -26,7 +26,7 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 1,
-                'pertanyaan' => "Ketersedian sistem dan perangkat pendukung layanan hosting aplikasi dan/atau data telah sesuai dengan yang dijanjikan"
+                'pertanyaan' => "Ketersediaan sistem dan perangkat pendukung layanan hosting aplikasi dan/atau data telah sesuai dengan yang dijanjikan"
             ],
             [
                 'survey_id'  => 1,
@@ -34,7 +34,7 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 2,
-                'pertanyaan' => "Penyedian fasilitas koneksi intranet  dan/atau internet, sudah sesuai kebutuhan Anda"
+                'pertanyaan' => "Penyediaan fasilitas koneksi intranet  dan/atau internet, sudah sesuai kebutuhan Anda"
             ],
             [
                 'survey_id'  => 2,
