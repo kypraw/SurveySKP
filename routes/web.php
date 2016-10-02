@@ -15,6 +15,11 @@ Route::group(['middleware' => ['guest']], function(){
         'as' => 'login'
     ]);
 
+    Route::get('/login', [
+        'uses' => 'AuthController@getLogin',
+        'as' => 'login'
+    ]);
+
     Route::post('login', [
         'uses' => 'AuthController@postLogin',
         'as' => 'login.post'
@@ -45,6 +50,7 @@ Route::group(['middleware' => ['auth', 'needSurvey']], function(){
 });
 
 Route::get('terimakasih', [
+    'middleware' => 'endSurvey',
     'uses' => 'SurveyController@getTerimaKasih',
     'as' => 'terimakasih'
 ]);

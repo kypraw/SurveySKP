@@ -14,19 +14,19 @@
                 <div class="col-md-3">
                     <fieldset id="{{$g->id}}">
                     <label class="radio-inline">
-                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->id}},1" required>1
+                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->survey_id}},{{$g->id}},1" required>1
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->id}},2">2
+                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->survey_id}},{{$g->id}},2">2
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->id}},3">3
+                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->survey_id}},{{$g->id}},3">3
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->id}},4">4
+                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->survey_id}},{{$g->id}},4">4
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->id}},5">5
+                        <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->survey_id}},{{$g->id}},5">5
                     </label>
                     </fieldset>
                 </div>
