@@ -32,9 +32,9 @@
                 </div>
             </div>
         @endforeach
-        <div class="form-group col-md-6">
-            <label for="comment">Komentar(Harus diisi):</label>
-            <textarea class="form-control" rows="5" col="10" name="komentar[{{$group[0]->survey_id}}]" required></textarea>
+        <div class="form-group col-md-9">
+            <label for="comment">Komentar (Wajib diisi):</label>
+            <textarea class="form-control" rows="5" name="komentar[{{$group[0]->survey_id}}]" required></textarea>
         </div>
     @endforeach
     {{csrf_field()}}
