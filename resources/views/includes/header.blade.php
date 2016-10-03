@@ -15,6 +15,9 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
+        @if(Auth::user()->isAdmin == 1)
+        <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+        @endif
         @if(Auth::user())
         <li><a href="{{ route('logout') }}">Logout</a></li>
         @endif

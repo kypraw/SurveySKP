@@ -54,6 +54,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         //middleware defined
         'needSurvey' => \App\Http\Middleware\NeedSurvey::class,
-        'endSurvey' => \App\Http\Middleware\EndSurvey::class
+        'endSurvey' => \App\Http\Middleware\EndSurvey::class,
+        'isAdmin' => \App\Http\Middleware\IsAdmin::class
     ];
 }

@@ -54,3 +54,10 @@ Route::get('terimakasih', [
     'uses' => 'SurveyController@getTerimaKasih',
     'as' => 'terimakasih'
 ]);
+
+Route::group(['middleware' => ['isAdmin']], function(){
+    Route::get('dashboard', [
+        'uses' => 'DashboardController@getDashboard',
+        'as' => 'dashboard'
+    ]);
+});
