@@ -11,6 +11,20 @@
                     <canvas id="myChart" height="280" width="600"></canvas>
                 </div>
             </div>
+            <div class="col-md-8 col-md-offset-2">
+            <table id="layanan" class="table table-bordered table-hover">
+                <th>Nomor</th>
+                <th>Layanan</th>
+                <th>Nilai</th>
+                @foreach($surveys as $survey)                    
+                    <tr>
+                        <td id="center-align">{{$survey->id}}</td>
+                        <td><a href="#">{{$survey->title}}</a></td>
+                        <td id="right-align">{{$survey->averageScore}}</td>
+                    </tr>
+                @endforeach
+            </table>
+            </div>
         </div>
     </div>
 @endsection
@@ -26,7 +40,7 @@
             data: {
                 labels: labels,
                 datasets: [{
-                    label: '#AverageScore',
+                    label: 'Nilai Rata-rata',
                     backgroundColor: "rgba(0, 102, 255, 0.5)",
                     data:data
                 }]
@@ -45,5 +59,5 @@
                 },
             }
         });
-</script>
+    </script>
 @endsection

@@ -21,6 +21,10 @@ p.title-fill{
     color: royalblue;
 }
 
+p#right-align{
+    text-align: right;
+}
+
 .col-md-6.surveygrid{
     padding-right: 50px;
 }
@@ -35,4 +39,16 @@ p.title-fill{
 
 .error-actions .btn {
     margin-right:10px;
+}
+
+table th{
+    text-align: center;
+}
+
+table tr td#center-align{
+    text-align: center;
+}
+
+table tr td#right-align{
+    text-align: right;
 }

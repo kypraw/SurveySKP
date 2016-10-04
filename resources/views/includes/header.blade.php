@@ -17,7 +17,14 @@
       <ul class="nav navbar-nav navbar-right">
         @if(Auth::check())
           @if(Auth::user()->isAdmin)
-            <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+          <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                  <li><a href="{{route('layanan')}}">Layanan</a></li>
+                  <li><a href="#">User</a></li>
+                </ul>
+            <!--<li><a href="{{route('layanan')}}">Dashboard</a></li>-->
+          </li>
           @endif
         @endif
         @if(Auth::user())

@@ -2,7 +2,7 @@
 
 @section('content')
     <h3>Silahkan isi survey dibawah ini</h3>
-    <p>1 = Tidak Puas, 2 = Kurang Puas, 3 = Cukup Puas, 4 = Puas, 5 = Sangat Puas
+    <p id="right-align">1 = Tidak Puas, 2 = Kurang Puas, 3 = Cukup Puas, 4 = Puas, 5 = Sangat Puas
     <form action="{{route('answers.post')}}" method=post> 
     @foreach($grouped as $group)
         <div class="panel panel-default">

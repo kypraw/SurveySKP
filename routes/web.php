@@ -56,8 +56,8 @@ Route::get('terimakasih', [
 ]);
 
 Route::group(['middleware' => ['isAdmin']], function(){
-    Route::get('dashboard', [
-        'uses' => 'DashboardController@getDashboard',
-        'as' => 'dashboard'
+    Route::get('layanan', [
+        'uses' => 'DashboardController@getLayanan',
+        'as' => 'layanan'
     ]);
 });
