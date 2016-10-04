@@ -16,5 +16,6 @@
         @include('includes.footer')
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src=" {{ URL::to('src/js/bootstrap.js') }} "></script>
+        @yield('script')
     </body>
 </html>

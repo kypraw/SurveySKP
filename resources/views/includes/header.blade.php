@@ -15,11 +15,14 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        @if(Auth::user()->isAdmin == 1)
-        <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+        @if(Auth::check())
+          @if(Auth::user()->isAdmin)
+            <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+          @endif
         @endif
         @if(Auth::user())
-        <li><a href="{{ route('logout') }}">Logout</a></li>
+          <li><a href="{{ route('surveys') }}">Surveys</a></li>
+          <li><a href="{{ route('logout') }}">Logout</a></li>
         @endif
       </ul>
     </div>
