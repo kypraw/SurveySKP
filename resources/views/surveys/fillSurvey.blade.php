@@ -9,7 +9,7 @@
         <div class="panel-heading"><p class="title">{{$group[0]->title}}</div>
             <div class="panel-body">
             @foreach($group as $g)
-                <div class="col-lg-12">
+                <div class="col-lg-12 pertanyaan">
                     <div class="col-md-9">
                         <p>{{$g->pertanyaan}}
                     </div>

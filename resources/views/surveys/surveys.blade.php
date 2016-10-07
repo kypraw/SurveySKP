@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <h3>Pilih Semua Layanan yang Pernah Anda Gunakan</h3>
+    <h3>Pilih Layanan yang Pernah Anda Gunakan (Bisa Lebih Dari Satu)</h3>
     <br>
     <form action="{{ route('surveys.post') }}" method="post">
     @foreach($surveys as $survey)

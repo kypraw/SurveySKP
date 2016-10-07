@@ -60,4 +60,9 @@ Route::group(['middleware' => ['isAdmin']], function(){
         'uses' => 'DashboardController@getLayanan',
         'as' => 'layanan'
     ]);
+
+    Route::get('layanan/{layanan_id}', [
+        'uses' => 'DashboardController@getLayananPer',
+        'as' => 'layanan.per'
+    ]);
 });

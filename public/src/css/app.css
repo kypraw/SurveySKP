@@ -3,6 +3,10 @@ h3{
     margin-right: 100px;
 }
 
+h3.left-align{
+    text-align: left;
+}
+
 label{
     margin: 0px;
 }
@@ -51,4 +55,9 @@ table tr td#center-align{
 
 table tr td#right-align{
     text-align: right;
+}
+
+.col-lg-12.pertanyaan{
+    margin-bottom: 5px;
+    border-bottom: 1px solid;
 }

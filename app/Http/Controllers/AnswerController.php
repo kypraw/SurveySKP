@@ -12,9 +12,12 @@ class AnswerController extends Controller
             'nilaipertanyaan' => 'required',
             'komentar' => 'required'
         ]);
+
+        
         $answers = $request['nilaipertanyaan'];
         $comments = $request['komentar']; 
         $user = $request->user();
+        
                 
         foreach($answers as $answer){
             $ansArray = explode(",", $answer);
@@ -22,21 +25,29 @@ class AnswerController extends Controller
             $ans->user_id = $user->id;
             $ans->survey_id  = (int)$ansArray[0];
             $ans->question_id  = (int)$ansArray[1];
-            $ans->nilai  = (int)$ansArray[2];
+            if((int)$ansArray[2] > 0 && (int)$ansArray[2] <= 5){
+                $ans->nilai  = (int)$ansArray[2];
+            } else {
+                continue;
+            }                    
             $ans->save();
-        };
-   
-        foreach($comments as $surv_id => $comm){      
+        };        
+        
+        foreach($comments as $surv_id => $comm){
             $c = new Comment();
             $c->user_id = $user->id;
             $c->survey_id  = $surv_id;
-            $c->komentar = $comm;
-            $c->save();        
-        };             
+            if($comm == ""){
+                continue;
+            } else {
+                $c->komentar = $comm;
+            }
+                        
+            $c->save();          
+        };              
                
         //$user->isDone = 1;
         //$user->save();
         return redirect('surveys');
-        
     }
 }

@@ -19,7 +19,7 @@
                 @foreach($surveys as $survey)                    
                     <tr>
                         <td id="center-align">{{$survey->id}}</td>
-                        <td><a href="#">{{$survey->title}}</a></td>
+                        <td><a href="{{route('layanan.per', ['layanan_id' => $survey->id])}}">{{$survey->title}}</a></td>
                         <td id="right-align">{{$survey->averageScore}}</td>
                     </tr>
                 @endforeach
