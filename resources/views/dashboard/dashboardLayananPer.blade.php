@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+    <h3>{{$surveyScore[0]->title}}</h3>
+    <br>
     <table class="table">
         <th>Pertanyaan</th>
         <th>Nilai</th>
