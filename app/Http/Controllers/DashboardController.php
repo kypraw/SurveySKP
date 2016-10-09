@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function getLayanan(){
         
         $surveys = DB::select("SELECT surveys.id, surveys.title,AVG(answers.nilai) AS averageScore
-        FROM surveys LEFT JOIN answers ON answers.survey_id = surveys.id
+        FROM surveys LEFT JOIN answers ON answers.survey_id = surveys.id WHERE answers.nilai IS NOT NULL
         GROUP BY id ORDER BY averageScore DESC");
         //var_dump($surveys);
         $labelsid = [];

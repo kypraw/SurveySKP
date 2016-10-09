@@ -8,14 +8,14 @@
         <!--optimize mobile experience-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-    <body>
+    <body @yield('body-class')>
         @include('includes.header')
         <div class="container">
             @yield('content')
         </div>
-        @include('includes.footer')
         <script type="text/javascript" src="{{ URL::to('src/js/jquery-2.1.1.min.js') }}"></script>
         <script type="text/javascript" src=" {{ URL::to('src/js/bootstrap.js') }} "></script>
         @yield('script')
     </body>
+    @include('includes.footer')
 </html>

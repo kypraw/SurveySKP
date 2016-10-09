@@ -4,25 +4,35 @@
     <h3>Pilih Layanan yang Pernah Anda Gunakan (Bisa Lebih Dari Satu)</h3>
     <br>
     <form action="{{ route('surveys.post') }}" method="post">
+    <!--
     @foreach($surveys as $survey)
         @if($survey->id % 2 == 1)
             <div class="row">
         @endif
         <div class="col-md-6 surveygrid">
             <div class="row">
-                <label><p class="title-fill"><input type="checkbox" name="survey[]" value="{{ $survey->id }}">
-                <strong>{{$survey->id . ". " . $survey->title }}</strong></p></label>
+                <label><p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}"><strong>{{$survey->id . ". "}} <span class="title-fill">{{$survey->title }}</span></strong></p></label>
             </div>
-            <!--
-            <div class="row deskripsisurvey">
-                <p>{{ $survey->deskripsi }}</p>
-            </div>
-            -->
         </div>
         @if($survey->id % 2 == 0)
             </div>
         @endif
     @endforeach
+    -->
+    
+    @foreach($surveys as $survey)
+        @if($survey->id % 10 == 1)
+            <div class="col-md-6 surveygrid">
+        @endif
+            <div class="row">
+                <label><p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}"><strong>{{$survey->id . ". "}} <span class="title-fill">{{$survey->title }}</span></strong></p></label>
+            </div>
+        @if($survey->id % 10 == 0)
+            </div>
+            <div class="clearfix visible-sm"></div>
+        @endif
+    @endforeach
+    
     {{csrf_field()}}
     <div class="col-md-12">
         <div class="col-md-4"></div>

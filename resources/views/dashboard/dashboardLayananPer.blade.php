@@ -19,4 +19,5 @@
     @endforeach
 
     <div class="col-md-12">{{$commentPagination->links()}}</div>
+    <a href="{{route('layanan')}}" class="btn btn-primary btn-md">Back</a>
 @endsection

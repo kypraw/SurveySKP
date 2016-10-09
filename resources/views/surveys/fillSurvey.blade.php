@@ -6,14 +6,14 @@
     <form action="{{route('answers.post')}}" method=post> 
     @foreach($grouped as $group)
         <div class="panel panel-default">
-        <div class="panel-heading"><p class="title">{{$group[0]->title}}</div>
+        <div class="panel-heading"><p class="title">{{$group[0]->survey_id . ". " . $group[0]->title}}</div>
             <div class="panel-body">
             @foreach($group as $g)
                 <div class="col-lg-12 pertanyaan">
                     <div class="col-md-9">
                         <p>{{$g->pertanyaan}}
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 radio-button">
                         <fieldset id="{{$g->id}}">
                         <label class="radio-inline">
                             <input type="radio" name="nilaipertanyaan[{{$g->id}}]" value="{{$g->survey_id}},{{$g->id}},1" required>1

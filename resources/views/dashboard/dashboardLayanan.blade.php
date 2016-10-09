@@ -13,8 +13,8 @@
             </div>
             <div class="col-md-8 col-md-offset-2">
             <table id="layanan" class="table table-bordered table-hover">
-                <th>Nomor</th>
-                <th>Layanan</th>
+                <th>ITSM</th>
+                <th>Nama Layanan</th>
                 <th>Nilai</th>
                 @foreach($surveys as $survey)                    
                     <tr>

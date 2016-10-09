@@ -19,7 +19,7 @@ p.title{
     font-size: 18px;
 }
 
-p.title-fill{
+span.title-fill{
     font-size: 18px;
     text-decoration: underline;
     color: royalblue;
@@ -47,6 +47,8 @@ p#right-align{
 
 table th{
     text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 table tr td#center-align{
@@ -60,4 +62,8 @@ table tr td#right-align{
 .col-lg-12.pertanyaan{
     margin-bottom: 5px;
     border-bottom: 1px solid;
+}
+
+div.col-md-3.radio-button{
+    text-align: right;
 }
