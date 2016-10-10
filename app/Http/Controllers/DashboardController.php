@@ -35,7 +35,7 @@ class DashboardController extends Controller
         FROM surveys LEFT JOIN comments ON comments.survey_id = surveys.id LEFT JOIN users ON users.id = comments.user_id
         WHERE surveys.id = ? ORDER BY CHAR_LENGTH(komentar) DESC", [$layanan_id]);
 
-        $paginate = 2;
+        $paginate = 10;
         $page = Input::get('page', 1);
         //perpotongan array
         $offset = ($page * $paginate) - $paginate;

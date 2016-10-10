@@ -46,8 +46,8 @@ class AnswerController extends Controller
             $c->save();          
         };              
                
-        //$user->isDone = 1;
-        //$user->save();
+        $user->isDone = 1;
+        $user->save();
         return redirect('surveys');
     }
 }

@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       @endif
-      <a class="navbar-brand">Survey Kepuasan Pengguna</a>
+      <a class="navbar-brand">Survey Kepuasan Pengguna Pusintek 2016</a>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
