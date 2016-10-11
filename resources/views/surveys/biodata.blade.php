@@ -7,19 +7,37 @@
             <div class="form-group">
             <label for="unit">Unit Kerja</label>
             <select class="form-control" name="unit" id="unit">
-                <option value="Setjen">Setjen</option>
+            @foreach($units as $unit)
+                @if($unit->unitLong == "Sekretariat Jenderal")
+                    <option value="{{$unit->id}}" selected>{{$unit->unitLong}}</option>
+                @else
+                <option value="{{$unit->id}}">{{$unit->unitLong}}</option>
+                @endif
+            @endforeach 
             </select>
             </div>
             <div class="form-group">
             <label for="jabatan">Jabatan</label>
             <select class="form-control" name="jabatan" id="jabatan">
-                <option value="Pelaksana">Pelaksana</option>
+            @foreach($jabatans as $jabatan)
+                @if($jabatan->jabatan == "Pelaksana")
+                    <option value="{{$jabatan->id}}" selected>{{$jabatan->jabatan}}</option>
+                @else
+                <option value="{{$jabatan->id}}">{{$jabatan->jabatan}}</option>
+                @endif
+            @endforeach>
             </select>
             </div>
             <div class="form-group">
             <label for="lokasi kerja">Lokasi Kerja</label>
             <select class="form-control" name="lokasi" id="lokasi">
-                <option value="DKI Jakarta">DKI Jakarta</option>
+            @foreach($lokasis as $lokasi)
+                @if($lokasi->lokasi == "DKI Jakarta")
+                    <option value="{{$lokasi->id}}" selected>{{$lokasi->lokasi}}</option>
+                @else
+                <option value="{{$lokasi->id}}">{{$lokasi->lokasi}}</option>
+                @endif
+            @endforeach>
             </select>
             </div>
             {{csrf_field()}}

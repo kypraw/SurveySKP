@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 Use App\Survey;
+use App\Unit;
+use App\Jabatan;
+use App\Lokasi;
 
 class SurveyController extends Controller
 {
     public function getBiodata(){
-        return view('surveys.biodata');
+        $units = Unit::all();
+        $jabatans = Jabatan::all();
+        $lokasis = Lokasi::all();
+        return view('surveys.biodata', ['units' =>$units, 'jabatans' => $jabatans, 'lokasis' => $lokasis]);
     }
 
     public function postBiodata(Request $request){
@@ -27,7 +33,7 @@ class SurveyController extends Controller
 
     public function getSurveys(Request $request){
         if(!$request->session()->has('biodata')){
-           return redirect()->route('biodata'); 
+            return redirect()->route('biodata'); 
         }
 
         $surveys = Survey::all();

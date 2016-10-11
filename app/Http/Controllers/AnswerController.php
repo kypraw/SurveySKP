@@ -10,7 +10,7 @@ class AnswerController extends Controller
 {
     public function postAnswers(Request $request){
         $biodata = $request->session()->get('biodata');
-        
+       
         $this->validate($request, [
             'nilaipertanyaan' => 'required',
             'komentar' => 'required'
@@ -20,9 +20,9 @@ class AnswerController extends Controller
         $comments = $request['komentar']; 
         $user = $request->user();
         
-        $user->unit = $biodata['unit'];
-        $user->jabatan = $biodata['jabatan'];
-        $user->lokasi = $biodata['lokasi'];
+        $user->unit = (int)$biodata['unit'];
+        $user->jabatan = (int)$biodata['jabatan'];
+        $user->lokasi = (int)$biodata['lokasi'];
         //$user->isDone = 1;
         $user->save();
 
