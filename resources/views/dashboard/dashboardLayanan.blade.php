@@ -3,8 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
+            <a href="{{route('dashboard.byTotalRespondent')}}"><p id="right-align">By Total Respondent</p></a>
             <p>Capaian SKP: <strong>{{$average}}</strong>
-
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">

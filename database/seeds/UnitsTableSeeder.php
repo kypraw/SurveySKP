@@ -45,12 +45,12 @@ class UnitsTableSeeder extends Seeder
                 'unitLong' => 'Direktorat Jenderal Perbendaharaan'
             ],
             [
-                'unit' => 'BKF',
-                'unitLong' => 'Badan Kebijakan Fiskal'
-            ],
-            [
                 'unit' => 'DJKN',
                 'unitLong' => 'Direktorat Jenderal Kekayaan Negara'
+            ],
+            [
+                'unit' => 'BKF',
+                'unitLong' => 'Badan Kebijakan Fiskal'
             ],
             [
                 'unit' => 'BPPK',

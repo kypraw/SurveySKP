@@ -14,7 +14,7 @@ class SurveysTableSeeder extends Seeder
         DB::table('surveys')->insert([
             [
                 'title'     => 'Layanan Hosting Aplikasi dan/atau Data',
-                'deskripsi' => 'Layanan penempatan aplikasi dan/atau data operasional dengan menggunakan infrastruktur TIK yang dimiliki Pusintek'
+                'deskripsi' => 'Layanan penempatan aplikasi dan/atau data operasional dengan menggunakan infrastruktur TIK yang dimiliki Pusintek',
             ],
             [
                 'title'     => 'Layanan Cloud Server',

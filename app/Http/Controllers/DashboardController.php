@@ -11,11 +11,13 @@ class DashboardController extends Controller
 {
     public function getLayanan(){
         
-        $surveys = DB::select("SELECT surveys.id, surveys.title,AVG(answers.nilai) AS averageScore
+
+        $surveys = DB::select("SELECT surveys.id, surveys.title, AVG(answers.nilai) AS averageScore
         FROM surveys LEFT JOIN questions ON questions.survey_id = surveys.id
         LEFT JOIN answers ON answers.question_id = questions.id WHERE answers.nilai IS NOT NULL
-        GROUP BY id ORDER BY averageScore DESC");
-        //var_dump($surveys);
+        GROUP BY id ORDER BY averageScore DESC");   
+        
+        
         $labelsid = [];
         $data   = [];
         foreach($surveys as $survey){
@@ -33,12 +35,6 @@ class DashboardController extends Controller
         LEFT JOIN answers ON answers.question_id = questions.id
         WHERE surveys.id = ? GROUP BY pertanyaan ORDER BY averageScore DESC ", [$layanan_id]);
         
-        /*
-        $surveyScore = DB::select("SELECT title, questions.id, pertanyaan, AVG(answers.nilai) AS averageScore
-        FROM questions LEFT JOIN answers ON answers.question_id = questions.id 
-        LEFT JOIN surveys ON surveys.id = answers.survey_id 
-        WHERE surveys.id = ? GROUP BY pertanyaan ORDER BY averageScore DESC ", [$layanan_id]);
-        */
         $surveyComment = DB::select("SELECT username, komentar, comments.created_at 
         FROM surveys LEFT JOIN comments ON comments.survey_id = surveys.id LEFT JOIN users ON users.id = comments.user_id
         WHERE surveys.id = ? ORDER BY CHAR_LENGTH(komentar) DESC", [$layanan_id]);
@@ -53,5 +49,12 @@ class DashboardController extends Controller
         $commentPagination->setPath($layanan_id);
 
         return view('dashboard.dashboardLayananPer', ['surveyScore' => $surveyScore, 'commentPagination' => $commentPagination]);
+    }
+
+    public function getLayananTotalRespondent(){
+        $totalRespondent = DB::select("SELECT surveys.id, surveys.title, COUNT(comments.survey_id) as totalRespondent
+        FROM comments LEFT JOIN surveys ON surveys.id =comments.survey_id GROUP BY surveys.id ORDER BY totalRespondent DESC");
+        
+        return view('dashboard.totalRespondent', ['totals'=> $totalRespondent]);
     }
 }

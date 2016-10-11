@@ -17,6 +17,7 @@ class CreateSurveysTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('deskripsi');
+            $table->integer('total_questions');
         });
     }
 

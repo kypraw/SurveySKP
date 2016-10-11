@@ -32,7 +32,7 @@
             <label for="lokasi kerja">Lokasi Kerja</label>
             <select class="form-control" name="lokasi" id="lokasi">
             @foreach($lokasis as $lokasi)
-                @if($lokasi->lokasi == "DKI Jakarta")
+                @if($lokasi->lokasi == "Jakarta")
                     <option value="{{$lokasi->id}}" selected>{{$lokasi->lokasi}}</option>
                 @else
                 <option value="{{$lokasi->id}}">{{$lokasi->lokasi}}</option>

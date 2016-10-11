@@ -42,11 +42,7 @@ class AnswerController extends Controller
             $c = new Comment();
             $c->user_id = $user->id;
             $c->survey_id  = $surv_id;
-            if($comm == ""){
-                continue;
-            } else {
-                $c->komentar = $comm;
-            }
+            $c->komentar = $comm;
                         
             $c->save();          
         };              
