@@ -15,8 +15,9 @@
                     </tr>
                 @endforeach
             </table>
+            <br>
+            <a href="{{route('layanan')}}" class="btn btn-primary btn-md">Back</a>
             </div>
         </div>
-        <a href="{{route('layanan')}}" class="btn btn-primary btn-md">Back</a>
     </div>
 @endsection

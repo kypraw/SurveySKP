@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('unit');
-            $table->integer('jabatan');
-            $table->integer('lokasi');
+            $table->integer('unit_id');
+            $table->integer('jabatan_id');
+            $table->integer('lokasi_id');
             $table->boolean('isDone')->default(false);
             $table->boolean('isAdmin')->default(false);
             $table->remembertoken();

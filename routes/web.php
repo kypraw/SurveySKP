@@ -82,9 +82,24 @@ Route::group(['middleware' => ['isAdmin']], function(){
         'as' => 'layanan.per'
     ]);
 
-    ROute::get('totalrespondent',[
+    Route::get('totalrespondent',[
         'uses' => 'DashboardController@getLayananTotalRespondent',
         'as' => 'dashboard.byTotalRespondent'
+    ]);
+
+    Route::get('users', [
+        'uses' => 'UserDashboardController@getUsers',
+        'as' => 'users'
+    ]);
+
+    Route::get('users/{unit_id}', [
+        'uses' => 'UserDashboardController@getUsersPer',
+        'as' => 'users.per'
+    ]);
+
+    Route::get('jabatan',[
+        'uses' => 'UserDashboardController@getJabatan',
+        'as' => 'dashboard.byJabatan'
     ]);
 });
 

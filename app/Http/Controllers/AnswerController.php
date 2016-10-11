@@ -20,9 +20,9 @@ class AnswerController extends Controller
         $comments = $request['komentar']; 
         $user = $request->user();
         
-        $user->unit = (int)$biodata['unit'];
-        $user->jabatan = (int)$biodata['jabatan'];
-        $user->lokasi = (int)$biodata['lokasi'];
+        $user->unit_id = (int)$biodata['unit'];
+        $user->jabatan_id = (int)$biodata['jabatan'];
+        $user->lokasi_id = (int)$biodata['lokasi'];
         //$user->isDone = 1;
         $user->save();
 

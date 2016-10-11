@@ -21,7 +21,7 @@
             <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard<span class="caret"></span></a>
             <ul class="dropdown-menu">
                   <li><a href="{{route('layanan')}}">Layanan</a></li>
-                  <li><a href="#">User</a></li>
+                  <li><a href="{{route('users')}}">User</a></li>
                 </ul>
             <!--<li><a href="{{route('layanan')}}">Dashboard</a></li>-->
           </li>
