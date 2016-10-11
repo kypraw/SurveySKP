@@ -9,6 +9,8 @@ use App\Comment;
 class AnswerController extends Controller
 {
     public function postAnswers(Request $request){
+        $biodata = $request->session()->get('biodata');
+        
         $this->validate($request, [
             'nilaipertanyaan' => 'required',
             'komentar' => 'required'
@@ -17,9 +19,12 @@ class AnswerController extends Controller
         $answers = $request['nilaipertanyaan'];
         $comments = $request['komentar']; 
         $user = $request->user();
-
+        
+        $user->unit = $biodata['unit'];
+        $user->jabatan = $biodata['jabatan'];
+        $user->lokasi = $biodata['lokasi'];
         //$user->isDone = 1;
-        //$user->save();
+        $user->save();
 
         foreach($answers as $question_number => $answer){
             $ans = new Answer();

@@ -82,7 +82,39 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    public function getAdldap(){
-        
+    /*test ldap
+    public function getAdldap(Request $request){
+        $email = $request['email'];
+        $user = explode('@', $email);
+        if(!($user[1] == 'kemenkeu.go.id')){
+            return redirect()->back();
+        }
+        $username = $user[0];
+        $password = $request['password'];
+
+        $adServer = "kemenkeu.go.id";
+        $ldap = ldap_connect($adServer);
+        ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
+
+        $ldaprdn = 'kemenkeu' . "\\" . $username;
+        $bind = @ldap_bind($ldap, $ldaprdn, $password);
+
+        $filter = "(samaccountname=rizkyprawira)";
+        $result = ldap_search($ldap,"ou=Pusat Sistem Informasi dan Teknologi Keuangan,ou=kemenkeu,dc=kemenkeu,dc=go,dc=id",
+        $filter) or die ("Error : ".ldap_error($bind));
+        $info=ldap_get_entries($ldap, $result);
+        for ($i=0; $i<$info["count"]; $i++)
+        {
+            if($info['count'] > 1)
+                break;
+            echo "<p>You are accessing <strong> ". $info[$i]["sn"][0] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
+            echo '<pre>';
+            var_dump($info);
+            echo '</pre>';
+            $userDn = $info[$i]["distinguishedname"][0]; 
+        }
+        @ldap_close($ldap);
     }
+    */
 }

@@ -3,6 +3,11 @@ h3{
     margin-right: 100px;
 }
 
+h3.biodata{
+    text-align: center;
+    margin-right: 0px;
+}
+
 h3.left-align{
     text-align: left;
 }

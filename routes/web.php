@@ -1,5 +1,4 @@
 <?php
-use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +24,12 @@ Route::group(['middleware' => ['guest']], function(){
         'uses' => 'AuthController@postLogin',
         'as' => 'login.post'
     ]);
+    /*
+    Route::post('adldap',[
+        'uses' => 'AuthController@getAdldap',
+        'as' => 'adldap'
+    ]);
+    */
 });
 
 Route::get('logout', [
@@ -34,6 +39,16 @@ Route::get('logout', [
     ]);
 
 Route::group(['middleware' => ['auth', 'needSurvey']], function(){
+    Route::get('biodata', [
+        'uses' => 'SurveyController@getBiodata',
+        'as' => 'biodata'
+    ]);
+
+    Route::post('biodata', [
+        'uses' => 'SurveyController@postBiodata',
+        'as' => 'biodata.post'
+    ]);
+
     Route::get('surveys',[
         'uses' => 'SurveyController@getSurveys',
         'as' => 'surveys'
@@ -67,3 +82,4 @@ Route::group(['middleware' => ['isAdmin']], function(){
         'as' => 'layanan.per'
     ]);
 });
+

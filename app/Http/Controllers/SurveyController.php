@@ -7,7 +7,29 @@ Use App\Survey;
 
 class SurveyController extends Controller
 {
-    public function getSurveys(){
+    public function getBiodata(){
+        return view('surveys.biodata');
+    }
+
+    public function postBiodata(Request $request){
+        $this->validate($request, [
+            'unit' => 'required',
+            'jabatan' => 'required',
+            'lokasi' => 'required'
+        ]);
+
+        $request->session()->put('biodata',['unit' => $request['unit'],
+                                            'jabatan' => $request['jabatan'],
+                                            'lokasi' => $request['lokasi']
+                                            ]);
+        return redirect()->route('surveys');
+    }
+
+    public function getSurveys(Request $request){
+        if(!$request->session()->has('biodata')){
+           return redirect()->route('biodata'); 
+        }
+
         $surveys = Survey::all();
         return view('surveys.surveys', ['surveys' => $surveys]);
     }
