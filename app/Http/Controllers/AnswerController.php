@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Answer;
 use App\Comment;
 
@@ -12,21 +13,20 @@ class AnswerController extends Controller
             'nilaipertanyaan' => 'required',
             'komentar' => 'required'
         ]);
-
         
         $answers = $request['nilaipertanyaan'];
         $comments = $request['komentar']; 
         $user = $request->user();
-        
-                
-        foreach($answers as $answer){
-            $ansArray = explode(",", $answer);
+
+        //$user->isDone = 1;
+        //$user->save();
+
+        foreach($answers as $question_number => $answer){
             $ans = new Answer();
             $ans->user_id = $user->id;
-            $ans->survey_id  = (int)$ansArray[0];
-            $ans->question_id  = (int)$ansArray[1];
-            if((int)$ansArray[2] > 0 && (int)$ansArray[2] <= 5){
-                $ans->nilai  = (int)$ansArray[2];
+            $ans->question_id  = (int)$question_number;
+            if((int)$answer > 0 && (int)$answer <= 5){
+                $ans->nilai  = (int)$answer;
             } else {
                 continue;
             }                    
@@ -46,8 +46,7 @@ class AnswerController extends Controller
             $c->save();          
         };              
                
-        $user->isDone = 1;
-        $user->save();
         return redirect('surveys');
+        
     }
 }

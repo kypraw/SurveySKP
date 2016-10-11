@@ -14,16 +14,11 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'username' => 'skp.mltik',
+                'email' => 'skp.mltik@kemenkeu.go.id',
                 'password' => bcrypt('SKP2016#oke'),
                 'isDone' => 1,
                 'isAdmin' => 1
             ],
-            [
-                'username' => 'rizkyprawira',
-                'password' => bcrypt('testing'),
-                'isDone' => 0,
-                'isAdmin' => 1
-            ]
         ]);
     }
 }

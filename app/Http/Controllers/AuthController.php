@@ -28,6 +28,7 @@ class AuthController extends Controller
         $password = $request['password'];
         
         if (Adldap::auth()->attempt($username, $password )){
+            
             if(Auth::attempt(['username' => $username, 'password' => $password])){
                 
                 return redirect()->route('surveys');
@@ -42,6 +43,7 @@ class AuthController extends Controller
                 } else {
                     $user = new User();
                     $user->username = $username;
+                    $user->email = $email;
                     $user->password = bcrypt($password) ;
                     $user->save();
                 }
@@ -50,7 +52,7 @@ class AuthController extends Controller
                 return redirect()->route('surveys'); 
                 
             }
-
+            
         } else {
             return redirect()->route('login');
         }
@@ -78,5 +80,9 @@ class AuthController extends Controller
     public function getLogout(){
         Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function getAdldap(){
+        
     }
 }
