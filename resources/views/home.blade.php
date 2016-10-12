@@ -19,7 +19,7 @@
                             <div class="info">
                                 <h4 class="text-center">Selamat Datang</h4>
                                 <p>Dalam rangka meningkatkan kualitas Layanan, perlu dilaksanakan survey yang ditujukan kepada seluruh pengguna Layanan Pusintek di 
-                                    lingkungan Kementerian Keuangan. Survey tersebut ditujukan untuk mengetahui tingkat penggunaan, kebutuhan, dan kepuasan pengguna terhadap layanan Pusintek di lingkungan 
+                                    lingkungan Kementerian Keuangan. Survey ditujukan untuk mengetahui tingkat penggunaan, kebutuhan, dan kepuasan pengguna terhadap layanan Pusintek di lingkungan 
                                     Kementerian Keuangan.</p>
                                     <p>Berkenaan dengan hal tersebut diatas, kami mengharapkan peran serta dalam pengisian survey berikut selambat-lambatnya sampai dengan tanggal xxx 2016.</p>
 

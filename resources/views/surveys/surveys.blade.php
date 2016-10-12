@@ -25,13 +25,13 @@
     -->
     
     @foreach($surveys as $survey)
-        @if($survey->id % 10 == 1)
+        @if($survey->id % 11 == 1)
             <div class="col-lg-6 surveygrid">
         @endif
             <div class="row">
                 <label><p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}"> <strong>{{$survey->id . ". "}} <span class="title-fill">{{$survey->title }}</span></strong></p></label>
             </div>
-        @if($survey->id % 10 == 0)
+        @if($survey->id % 11 == 0 OR $survey->id == 21)
             </div>
         @endif
     @endforeach
@@ -60,10 +60,17 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Petunjuk Pengisian</h4>
+        <h4 class="modal-title">Petunjuk Pengisian Survey</h4>
       </div>
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <p>Sebelumnya kami ucapkan terimakasih karena Bapak/Ibu telah meluangkan waktu untuk mengisi Survey Kepuasan Pengguna Pusintek 2016.</p>
+        <p>Berikut adalah petunjuk pengisian survey:</p>
+        <ol>
+            <li>Pengisian survey hanya dilaksanakan satu kali.</li>
+            <li>Silahkan pilih semua layanan yang pernah Bapak/Ibu gunakan dengan cara mencentang checkbox atau mengklik nama layanan.</li>
+            <li>Klik tombol Next jika telah selesai memilih.</li>
+            <li>Silahkan isi survey pada halaman berikutnya.</li>
+        </ol>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

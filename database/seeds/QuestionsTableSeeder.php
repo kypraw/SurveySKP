@@ -336,6 +336,26 @@ class QuestionsTableSeeder extends Seeder
                 'survey_id'  => 20,
                 'pertanyaan' => "Kelengkapan informasi yang diberikan Pusintek sesuai kebutuhan Anda"
             ],
+            [
+                'survey_id'  => 21,
+                'pertanyaan' => "Service Desk mudah dihubungi melalui Telpon dan/atau Email"
+            ],
+            [
+                'survey_id'  => 21,
+                'pertanyaan' => "Service Desk cepat merespon permintaan dan/atau pengaduan Anda"
+            ],
+            [
+                'survey_id'  => 21,
+                'pertanyaan' => "Service Desk memberikan penjelasan yang mudah dipahami "
+            ],
+            [
+                'survey_id'  => 21,
+                'pertanyaan' => "Service Desk menginformasikan status permintaan dan/atau pengaduan yang Anda sampaikan"
+            ],
+            [
+                'survey_id'  => 21,
+                'pertanyaan' => "Service Desk menunjukkan keramahan dan antusias dalam menyelesaikan permintaan dan/atau pengaduan Anda"
+            ],
         ]);
     }
 }

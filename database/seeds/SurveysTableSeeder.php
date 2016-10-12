@@ -91,6 +91,10 @@ class SurveysTableSeeder extends Seeder
             [
                 'title'     => 'Layanan Informasi Pusintek',
                 'deskripsi' => 'Layanan dukungan informasi, mencakup layanan informasi Pusintek dan layanan informasi aplikasi/infrastruktur milik atau yang dikelola Pusintek(CMDB)'
+            ],
+            [
+                'title'     => 'Layanan Service Desk',
+                'deskripsi' => 'Fungsi single point of contact (SPOC) yang memberikan dukungan layanan bagi pengguna terkait layanan dan gangguan TIK'
             ]
         ]);
     }
