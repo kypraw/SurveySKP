@@ -26,7 +26,7 @@ class UnitsTableSeeder extends Seeder
             ],
             [
                 'unit' => 'DJPK',
-                'unitLong' => 'Direktorat Jendreral Perimbangan Keuangan'
+                'unitLong' => 'Direktorat Jenderal Perimbangan Keuangan'
             ],
             [
                 'unit' => 'DJP',

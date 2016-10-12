@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserDashboardController extends Controller
 {
@@ -22,6 +24,14 @@ class UserDashboardController extends Controller
     public function getUsersPer($unit_id){
         $users = DB::select("SELECT username FROM users WHERE users.unit_id = ? AND users.isDone = 1 ORDER BY username", [$unit_id]);
 
-        return view('dashboard.usersUnitsPer', ['users' => $users]);
+        $paginate = 10;
+        $page = Input::get('page', 1);
+        //perpotongan array
+        $offset = ($page * $paginate) - $paginate;
+        $itemForCurrentPage = array_slice($users, $offset, $paginate, true);
+        $commentPagination = new LengthAwarePaginator($itemForCurrentPage, count($users), $paginate, $page);
+        
+        $commentPagination->setPath($unit_id);
+        return view('dashboard.usersUnitsPer', ['users' => $commentPagination]);
     }
 }

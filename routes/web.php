@@ -101,5 +101,10 @@ Route::group(['middleware' => ['isAdmin']], function(){
         'uses' => 'UserDashboardController@getJabatan',
         'as' => 'dashboard.byJabatan'
     ]);
+
+    Route::get('daerah', [
+        'uses' => 'DashboardController@getDaerah',
+        'as' => 'daerah'
+    ]);
 });
 

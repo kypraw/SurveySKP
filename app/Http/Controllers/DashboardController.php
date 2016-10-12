@@ -57,4 +57,11 @@ class DashboardController extends Controller
         
         return view('dashboard.totalRespondent', ['totals'=> $totalRespondent]);
     }
+
+    public function getDaerah(){
+        $locations = DB::select("SELECT lokasi, COUNT(username) as total
+        FROM lokasis LEFT JOIN users on users.lokasi_id = lokasis.id WHERE users.isDone = 1 GROUP BY lokasi ORDER BY lokasi");
+
+        return view('dashboard.daerah', ['locations' => $locations]);
+    }
 }

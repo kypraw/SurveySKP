@@ -22,6 +22,7 @@
             <ul class="dropdown-menu">
                   <li><a href="{{route('layanan')}}">Layanan</a></li>
                   <li><a href="{{route('users')}}">User</a></li>
+                  <li><a href="{{route('daerah')}}">Daerah</a></li>
                 </ul>
             <!--<li><a href="{{route('layanan')}}">Dashboard</a></li>-->
           </li>
