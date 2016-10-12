@@ -12,6 +12,10 @@ class AuthController extends Controller
 {
     protected $loginPath = '/';
 
+    public function getHome(){
+        return view('home');
+    }
+
     public function getLogin(){
         return view('login');
     }

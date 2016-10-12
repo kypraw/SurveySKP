@@ -7,7 +7,9 @@
     @foreach($grouped as $group)
         <p id="right-align">1 = Tidak Puas, 2 = Kurang Puas, 3 = Cukup Puas, 4 = Puas, 5 = Sangat Puas
         <div class="panel panel-default">
-        <div class="panel-heading"><p class="title">{{$group[0]->survey_id . ". " . $group[0]->title}}</div>
+        <div class="panel-heading"><p class="title">{{$group[0]->survey_id . ". " . $group[0]->title}}
+        <p>{{$group[0]->deskripsi}}</p>
+        </div>
             <div class="panel-body">
             @foreach($group as $g)
                 <div class="col-md-12 pertanyaan">
@@ -43,8 +45,14 @@
         </div>
     @endforeach
     {{csrf_field()}}
-    <div class="col-md-2 col-md-offset-5">
-        <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+    <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+            <a href="{{route('surveys')}}" class="btn btn-primary btn-md btn-block">Back</a>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-md btn-primary btn-block" type="submit">Submit</button>
+        </div>
     </div>
     </form>
 @endsection

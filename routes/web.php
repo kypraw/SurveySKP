@@ -11,8 +11,8 @@
 */
 Route::group(['middleware' => ['guest']], function(){
     Route::get('/', [
-        'uses' => 'AuthController@getLogin',
-        'as' => 'login'
+        'uses' => 'AuthController@getHome',
+        'as' => 'home'
     ]);
 
     Route::get('/login', [

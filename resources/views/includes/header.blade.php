@@ -29,9 +29,9 @@
         @endif
         @if(Auth::user())
           @if(Auth::user()->isDone == 0)
-            <li><a href="{{ route('surveys') }}">Surveys</a></li>
+            <li><a class="white" href="{{ route('surveys') }}">Surveys</a></li>
           @endif
-          <li><a href="{{ route('logout') }}">Logout</a></li>
+          <li><a class="white" href="{{ route('logout') }}">Logout</a></li>
         @endif
       </ul>
     </div>

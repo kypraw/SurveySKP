@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('container-class')
+    surveys
+@endsection
+
 @section('content')
     <h3>Pilih Layanan yang Pernah Anda Gunakan (Bisa Lebih Dari Satu)</h3>
     <br>
@@ -29,13 +33,16 @@
             </div>
         @if($survey->id % 10 == 0)
             </div>
-            <div class="clearfix visible-sm"></div>
         @endif
     @endforeach
     
     {{csrf_field()}}
+    
     <div class="col-md-12">
-        <div class="col-md-4"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+            <a href="{{route('biodata')}}" class="btn btn-primary btn-md btn-block">Back</a>
+        </div>
         <div class="col-md-2">
             <button class="btn btn-md btn-primary btn-block" type="submit">Next</button>
         </div>
