@@ -10,7 +10,7 @@
     </head>
     <body @yield('body-class')>
         @include('includes.header')
-        <div class="container @yield('container-class')">
+        <div class="container-fluid @yield('container-class')">
             @yield('content')
         </div>
         <script type="text/javascript" src="{{ URL::to('src/js/jquery-2.1.1.min.js') }}"></script>
