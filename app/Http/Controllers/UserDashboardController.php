@@ -20,7 +20,7 @@ class UserDashboardController extends Controller
     }
 
     public function getUsersPer($unit_id){
-        $users = DB::select("SELECT username FROM users WHERE users.unit_id = ? AND users.isDone = 1", [$unit_id]);
+        $users = DB::select("SELECT username FROM users WHERE users.unit_id = ? AND users.isDone = 1 ORDER BY username", [$unit_id]);
 
         return view('dashboard.usersUnitsPer', ['users' => $users]);
     }
