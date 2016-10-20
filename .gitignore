@@ -1,5 +1,6 @@
 /node_modules
 /public/storage
+/public/SC2016.pdf
 /vendor
 /.idea
 Homestead.json

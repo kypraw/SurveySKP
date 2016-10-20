@@ -12,7 +12,7 @@
         @if(Auth::user()->isAdmin)
             @include('includes.header')
         @endif
-        <div class="container">
+        <div class="container fluid">
             @yield('content')
         </div>
         <script type="text/javascript" src="{{ URL::to('src/js/jquery-2.1.1.min.js') }}"></script>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSurveysTable extends Migration
+class CreateUnitTwosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSurveysTable extends Migration
      */
     public function up()
     {
-        Schema::create('surveys', function (Blueprint $table) {
+        Schema::create('unit_twos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('deskripsi');
+            $table->integer('unit_id');
+            $table->string('eselon_dua');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateSurveysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('surveys');
+        Schema::dropIfExists('unit_twos');
     }
 }

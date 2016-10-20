@@ -15,7 +15,7 @@ class DashboardController extends Controller
         $surveys = DB::select("SELECT surveys.id, surveys.title, AVG(answers.nilai) AS averageScore
         FROM surveys LEFT JOIN questions ON questions.survey_id = surveys.id
         LEFT JOIN answers ON answers.question_id = questions.id WHERE answers.nilai IS NOT NULL
-        GROUP BY id ORDER BY averageScore DESC");   
+        GROUP BY id ORDER BY surveys.id");   
         
         
         $labelsid = [];
@@ -53,14 +53,14 @@ class DashboardController extends Controller
 
     public function getLayananTotalRespondent(){
         $totalRespondent = DB::select("SELECT surveys.id, surveys.title, COUNT(comments.survey_id) as totalRespondent
-        FROM comments LEFT JOIN surveys ON surveys.id =comments.survey_id GROUP BY surveys.id ORDER BY totalRespondent DESC");
+        FROM comments LEFT JOIN surveys ON surveys.id =comments.survey_id GROUP BY surveys.id ORDER BY surveys.id");
         
         return view('dashboard.totalRespondent', ['totals'=> $totalRespondent]);
     }
 
     public function getDaerah(){
         $locations = DB::select("SELECT lokasi, COUNT(username) as total
-        FROM lokasis LEFT JOIN users on users.lokasi_id = lokasis.id WHERE users.isDone = 1 GROUP BY lokasi ORDER BY lokasi");
+        FROM lokasis LEFT JOIN users on users.lokasi_id = lokasis.id WHERE users.isDone = 1 GROUP BY lokasi ORDER BY lokasi DESC");
 
         return view('dashboard.daerah', ['locations' => $locations]);
     }

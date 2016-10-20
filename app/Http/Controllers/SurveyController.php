@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 Use App\Survey;
 use App\Unit;
 use App\Jabatan;
@@ -36,7 +37,8 @@ class SurveyController extends Controller
             return redirect()->route('biodata'); 
         }
 
-        $surveys = Survey::all();
+        $surveys = DB::select('SELECT * from surveys WHERE id BETWEEN 1 AND 20');
+        
         return view('surveys.surveys', ['surveys' => $surveys]);
     }
 
@@ -49,7 +51,10 @@ class SurveyController extends Controller
         //tampilkan pertanyaan dari survey yang dipilih
         $surveyQuestion = DB::table('surveys')->leftJoin('questions', 'surveys.id', '=', 'questions.survey_id')->whereIn('survey_id', $surveyChoosen)->get();
         $grouped = $surveyQuestion->groupBy('survey_id');
-        return view('surveys.fillSurvey', ['grouped' => $grouped]);
+
+        $serviceDeskQuestion = DB::table('surveys')->leftJoin('questions', 'surveys.id', '=', 'questions.survey_id')->where('surveys.id', 21)->get();
+        
+        return view('surveys.fillSurvey', ['grouped' => $grouped, 'serviceDesk' => $serviceDeskQuestion]);
     }
 
     public function getTerimaKasih(){

@@ -23,19 +23,30 @@
         @endif
     @endforeach
     -->
-    
+    <!--
     @foreach($surveys as $survey)
         @if($survey->id % 11 == 1)
             <div class="col-lg-6 surveygrid">
         @endif
             <div class="row">
-                <label><p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}"> <strong>{{$survey->id . ". "}} <span class="title-fill">{{$survey->title }}</span></strong></p></label>
+                <label><p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}"> <strong> <span class="title-fill">{{$survey->id . ". " . $survey->title }}</span></strong></p></label>
             </div>
         @if($survey->id % 11 == 0 OR $survey->id == 21)
             </div>
         @endif
     @endforeach
-    
+    -->
+
+    <strong><p>Untuk informasi lebih detail dari masing-masing layanan silahkan <a href="{{URL::to('/SC2016.pdf')}}" target="_blank">klik disini</a></p></strong>
+     @foreach($surveys as $survey)
+        <div class="col-lg-12 surveygrid">
+            <div class="row">
+                <label><p class="title"><input type="checkbox" name="survey[]" value="{{ $survey->id }}"> <strong> <span class="title-fill">{{$survey->id . ". " . $survey->title }}</span></strong></p></label>
+                <p>{{$survey->deskripsi}}</p>
+            </div>
+       </div>
+    @endforeach
+
     {{csrf_field()}}
     
     <div class="col-md-12">
@@ -70,6 +81,7 @@
             <li>Silahkan pilih semua layanan yang pernah Bapak/Ibu gunakan dengan cara mencentang checkbox atau mengklik nama layanan.</li>
             <li>Klik tombol Next jika telah selesai memilih.</li>
             <li>Silahkan isi survey pada halaman berikutnya.</li>
+            <li>Untuk informasi lebih detail dari masing-masing layanan silahkan <a href="{{URL::to('/SC2016.pdf')}}" target="_blank">klik disini</a></li>
         </ol>
       </div>
       <div class="modal-footer">

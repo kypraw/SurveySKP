@@ -86,7 +86,7 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    /*test ldap
+    /*
     public function getAdldap(Request $request){
         $email = $request['email'];
         $user = explode('@', $email);
@@ -104,7 +104,7 @@ class AuthController extends Controller
         $ldaprdn = 'kemenkeu' . "\\" . $username;
         $bind = @ldap_bind($ldap, $ldaprdn, $password);
 
-        $filter = "(samaccountname=rizkyprawira)";
+        $filter = "(samaccountname=piotun)";
         $result = ldap_search($ldap,"ou=Pusat Sistem Informasi dan Teknologi Keuangan,ou=kemenkeu,dc=kemenkeu,dc=go,dc=id",
         $filter) or die ("Error : ".ldap_error($bind));
         $info=ldap_get_entries($ldap, $result);
@@ -120,5 +120,6 @@ class AuthController extends Controller
         }
         @ldap_close($ldap);
     }
-    */
+	*/
+    
 }
