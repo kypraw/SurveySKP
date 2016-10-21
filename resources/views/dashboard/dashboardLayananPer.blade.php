@@ -18,7 +18,7 @@
     <div class="col-lg-6">
     <h3 class="left-align">Komentar:</h3>
     @foreach($commentPagination as $comment)
-        <row><p>{{$comment->username}}: {{$comment->komentar}}</p></row>
+        <row><p>{{$comment->longname}}: {{$comment->komentar}}</p></row>
     @endforeach
 
     <div class="col-md-12">{{$commentPagination->links()}}</div>

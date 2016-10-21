@@ -34,7 +34,11 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 2,
-                'pertanyaan' => "Penyediaan fasilitas koneksi intranet  dan/atau internet, sudah sesuai kebutuhan Anda"
+                'pertanyaan' => "Permintaan layanan dipenuhi sesuai waktu yang dijanjikan"
+            ],
+            [
+                'survey_id'  => 2,
+                'pertanyaan' => "Penyediaan fasilitas koneksi intranet dan/atau internet, sudah sesuai kebutuhan Anda"
             ],
             [
                 'survey_id'  => 2,
@@ -50,35 +54,35 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 3,
+                'pertanyaan' => "Fasilitas koneksi  internet, intranet,ruang (<i>rack space or data center space</i>), kelistrikan, AC, dan UPS sudah sesuai kebutuhan Anda"
+            ],
+            [
+                'survey_id'  => 3,
+                'pertanyaan' => "Ketersediaan perangkat keamanan jaringan: Firewall, IPS, dan IDS telah memadai"
+            ],
+            [
+                'survey_id'  => 3,
+                'pertanyaan' => "Kemudahan dalam mengakses perangkat keras TIK yang dititipkan di pusat data Kementerian Keuangan"
+            ],
+            [
+                'survey_id'  => 3,
+                'pertanyaan' => "Pengamanan dan pemantauan fisik di ruang Data Center telah memadai"
+            ],
+            [
+                'survey_id'  => 4,
                 'pertanyaan' => "Penyediaan fasilitas koneksi intranet  dan/atau internet, sudah sesuai kebutuhan Anda"
             ],
             [
-                'survey_id'  => 3,
-                'pertanyaan' => "Ketersediaan perangkat keamanan jaringan: Firewall, IPS, dan IDS telah memadai"
-            ],
-            [
-                'survey_id'  => 3,
-                'pertanyaan' => "Kapasitas perangkat  sesuai dengan yang sesuai dengan kebutuhan"
-            ],
-            [
-                'survey_id'  => 3,
-                'pertanyaan' => "Pemantauan fisik, ketersediaan dan kinerja perangkat sudah sesuai dengan kebutuhan"
+                'survey_id'  => 4,
+                'pertanyaan' => "Kemudahan dalam mengakses perangkat keras TIK yang dititipkan di DRC Kementerian Keuangan"
             ],
             [
                 'survey_id'  => 4,
-                'pertanyaan' => "Fasilitas koneksi  internet, intranet, dan ruang (rack space or data center space), kelistrikan, AC, dan UPS sudah sesuai kebutuhan Anda"
+                'pertanyaan' => "Kapasitas perangkat sesuai dengan kebutuhan"
             ],
             [
                 'survey_id'  => 4,
-                'pertanyaan' => "Ketersediaan perangkat keamanan jaringan: Firewall, IPS, dan IDS telah memadai"
-            ],
-            [
-                'survey_id'  => 4,
-                'pertanyaan' => "Kemudahan dalam mengakses perangkat keras TIK yang dititipkan di pusat data  Kementerian Keuangan"
-            ],
-            [
-                'survey_id'  => 4,
-                'pertanyaan' => "Pengamanan, pemantauan fisik, dan koneksi perangkat di ruang Data Center telah memadai"
+                'pertanyaan' => "Replikasi dari DC ke DRC dilaksanakan dengan baik"
             ],
             [
                 'survey_id'  => 5,
@@ -86,7 +90,7 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 5,
-                'pertanyaan' => "Kesesuaian antara data elektronik yang dipertukarkan dengan kamus data yang berlaku'"
+                'pertanyaan' => "Kesesuaian antara data elektronik yang dipertukarkan dengan kamus data yang berlaku"
             ],
             [
                 'survey_id'  => 5,
@@ -185,64 +189,68 @@ class QuestionsTableSeeder extends Seeder
                 'pertanyaan' => "Penanganan gangguan sesuai dengan yang dijanjikan"
             ],
             [
+                'survey_id'  => 10,
+                'pertanyaan' => "Ketersediaan jaringan internet yang disediakan Pusintek telah sesuai dengan kebutuhan"
+            ],
+            [
                 'survey_id'  => 11,
+                'pertanyaan' => "Kemudahan dalam mendapatkan Layanan Surat elektronik  dan penghapusan akun, serta reset kata sandi"
+            ],
+            [
+                'survey_id'  => 11,
+                'pertanyaan' => "Fasilitas surat elektronik termasuk attachment, akses sharecontact, dan kalender sesuai kebutuhan Anda"
+            ],
+            [
+                'survey_id'  => 11,
+                'pertanyaan' => "Fasilitas surat elektronik mempermudah dalam melaksanakan pekerjaan"
+            ],
+            [
+                'survey_id'  => 11,
+                'pertanyaan' => "Penanganan gangguan sesuai dengan yang dijanjikan"
+            ],
+            [
+                'survey_id'  => 12,
                 'pertanyaan' => "Kemudahan dalam mendapatkan Layanan Akun Aplikasi dan sharing folder  sesuai harapan Anda"
             ],
             [
-                'survey_id'  => 11,
-                'pertanyaan' => "Pemberian hak akses terhadap sharing folder  sesuai dengan kebutuhan Anda"
+                'survey_id'  => 12,
+                'pertanyaan' => "Pemberian hak akses terhadap sharing folder sesuai dengan kebutuhan Anda"
             ],
             [
-                'survey_id'  => 11,
-                'pertanyaan' => "Ketersediaan Layanan Akun Aplikasi dan sharing folder  telah memadai"
+                'survey_id'  => 12,
+                'pertanyaan' => "Ketersediaan Layanan Akun Aplikasi dan sharing folder telah memadai"
             ],
             [
-                'survey_id'  => 11,
+                'survey_id'  => 12,
                 'pertanyaan' => "Keamanan terhadap sharing folder telah memadai"
             ],
             [
-                'survey_id'  => 11,
+                'survey_id'  => 12,
                 'pertanyaan' => "Kapasitas sharing folder yang diberikan telah memadai"
             ],
             [
-                'survey_id'  => 12,
-                'pertanyaan' => "Penyediaan petugas teknis untuk melakukan konfigurasi,  pendampingan konfigurasi dan/atau UAT memberikan kemudahan bagi Anda"
-            ],
-            [
-                'survey_id'  => 12,
-                'pertanyaan' => "Kesesuaian sistem operasi dan aplikasi yang diinstal di desktop/notebook  terhadap kebutuhan Anda"
-            ],
-            [
-                'survey_id'  => 12,
-                'pertanyaan' => "Instalasi dan konfigurasi desktop/notebook  dilakukan sesuai dengan waktu yang dijanjikan"
+                'survey_id'  => 13,
+                'pertanyaan' => "Penyediaan petugas teknis untuk melakukan konfigurasi, pendampingan konfigurasi dan/atau UAT memberikan kemudahan bagi Anda"
             ],
             [
                 'survey_id'  => 13,
+                'pertanyaan' => "Kesesuaian sistem operasi dan aplikasi yang diinstal di desktop/notebook terhadap kebutuhan Anda"
+            ],
+            [
+                'survey_id'  => 13,
+                'pertanyaan' => "Instalasi dan konfigurasi desktop/notebook dilakukan sesuai dengan waktu yang dijanjikan"
+            ],
+            [
+                'survey_id'  => 14,
                 'pertanyaan' => "Kemudahan mendapatkan Layanan Penggunaan Perangkat Lunak Berlisensi"
             ],
             [
-                'survey_id'  => 13,
+                'survey_id'  => 14,
                 'pertanyaan' => "Ketersediaan perangkat lunak berlisensi sesuai kebutuhan"
             ],
             [
-                'survey_id'  => 13,
+                'survey_id'  => 14,
                 'pertanyaan' => "Kemudahan peminjaman duplikat CD / DVD perangkat lunak berlisensi"
-            ],
-            [
-                'survey_id'  => 14,
-                'pertanyaan' => "Kemudahan mendapatkan layanan unduh"
-            ],
-            [
-                'survey_id'  => 14,
-                'pertanyaan' => "Pusintek memberikan layanan unduh dengan cepat dan tepat kepada Anda"
-            ],
-            [
-                'survey_id'  => 14,
-                'pertanyaan' => "Penyampaian berkas elektronik hasil unduhan telah sesuai harapanAnda"
-            ],
-            [
-                'survey_id'  => 14,
-                'pertanyaan' => "Kapasitas pengunduhan file mencukupi kebutuhan anda"
             ],
             [
                 'survey_id'  => 15,
@@ -270,7 +278,7 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 16,
-                'pertanyaan' => "Instruktur/fasilitator mempunyai kemampuan berinteraksi dan berkomunikasiyang memadai dalam menyampaikan materi"
+                'pertanyaan' => "Instruktur/fasilitator mempunyai kemampuan berinteraksi dan berkomunikasi yang memadai dalam menyampaikan materi"
             ],
             [
                 'survey_id'  => 16,
@@ -294,35 +302,35 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 18,
-                'pertanyaan' => "Penanganan ganggguan TIK dilakukan secara cepat dan tepat"
-            ],
-            [
-                'survey_id'  => 18,
-                'pertanyaan' => "Adanya dukungan On Site secara berkala sesuai dengan permintaan pelanggan"
-            ],
-            [
-                'survey_id'  => 18,
-                'pertanyaan' => "Ketersediaan petugas Pusintek di lokasi dalam menangani gangguan yang dialami pimpinan"
-            ],
-            [
-                'survey_id'  => 18,
-                'pertanyaan' => "Petugas Pusintek merupakan orang-orang yang kompeten dalam menangani gangguan"
-            ],
-            [
-                'survey_id'  => 19,
                 'pertanyaan' => "Ketersediaan perangkat infrastruktur Video Conference sesuai kebutuhan"
             ],
             [
-                'survey_id'  => 19,
+                'survey_id'  => 18,
                 'pertanyaan' => "Petugas Teknis instalasi/konfigurasi cepat tanggap dalam memberikan layanan"
             ],
             [
-                'survey_id'  => 19,
+                'survey_id'  => 18,
                 'pertanyaan' => "Petugas teknis instalasi/ konfigurasi merupakan tenaga teknis yang kompeten di bidangnya"
             ],
             [
-                'survey_id'  => 19,
+                'survey_id'  => 18,
                 'pertanyaan' => "Ketersediaan koneksi jaringan sesuai kebutuhan"
+            ],
+            [
+                'survey_id'  => 19,
+                'pertanyaan' => "Penanganan ganggguan TIK dilakukan secara cepat dan tepat"
+            ],
+            [
+                'survey_id'  => 19,
+                'pertanyaan' => "Adanya dukungan On Site secara berkala sesuai dengan permintaan pelanggan"
+            ],
+            [
+                'survey_id'  => 19,
+                'pertanyaan' => "Ketersediaan petugas Pusintek di lokasi dalam menangani gangguan yang dialami pimpinan"
+            ],
+            [
+                'survey_id'  => 19,
+                'pertanyaan' => "Petugas Pusintek merupakan orang-orang yang kompeten dalam menangani gangguan"
             ],
             [
                 'survey_id'  => 20,
@@ -330,7 +338,7 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'survey_id'  => 20,
-                'pertanyaan' => "Informasi yang diberikan mudah dimengerti dan  update"
+                'pertanyaan' => "Informasi yang diberikan mudah dimengerti dan update"
             ],
             [
                 'survey_id'  => 20,

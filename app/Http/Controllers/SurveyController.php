@@ -20,12 +20,12 @@ class SurveyController extends Controller
 
     public function postBiodata(Request $request){
         $this->validate($request, [
-            'unit' => 'required',
+            'unit_two' => 'required',
             'jabatan' => 'required',
             'lokasi' => 'required'
         ]);
 
-        $request->session()->put('biodata',['unit' => $request['unit'],
+        $request->session()->put('biodata',['unit_two' => $request['unit_two'],
                                             'jabatan' => $request['jabatan'],
                                             'lokasi' => $request['lokasi']
                                             ]);

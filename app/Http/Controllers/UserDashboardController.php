@@ -7,9 +7,16 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserDashboardController extends Controller
 {
-    public function getUsers(){
+    public function getUnits(){
         $usersUnits = DB::select("SELECT units.id, unitLong, COUNT(username) as total
-        FROM units LEFT JOIN users on users.unit_id = units.id WHERE users.isDone = 1 GROUP BY unitLong ORDER BY total DESC");
+        FROM units LEFT JOIN unit_twos ON unit_twos.unit_id = units.id LEFT JOIN users ON users.unit_two_id = unit_twos.id WHERE users.isDone = 1 GROUP BY unitLong ORDER BY units.id DESC");
+        
+        return view('dashboard.usersUnitsI', ['usersUnits' => $usersUnits]);
+    }
+
+    public function getUsers(){
+        $usersUnits = DB::select("SELECT unit_twos.id, eselon_dua, COUNT(username) as total
+        FROM unit_twos LEFT JOIN users on users.unit_two_id = unit_twos.id WHERE users.isDone = 1 GROUP BY eselon_dua ORDER BY unit_twos.id DESC");
         
         return view('dashboard.usersUnits', ['usersUnits' => $usersUnits]);
     }
@@ -21,17 +28,17 @@ class UserDashboardController extends Controller
         return view('dashboard.jabatan',['jabatans' => $jabatans]);
     }
 
-    public function getUsersPer($unit_id){
-        $users = DB::select("SELECT username FROM users WHERE users.unit_id = ? AND users.isDone = 1 ORDER BY username", [$unit_id]);
+    public function getUsersPer($unit_two_id){
+        $users = DB::select("SELECT email, longname FROM users WHERE users.unit_two_id = ? AND users.isDone = 1 ORDER BY username", [$unit_two_id]);
 
         $paginate = 10;
         $page = Input::get('page', 1);
         //perpotongan array
         $offset = ($page * $paginate) - $paginate;
         $itemForCurrentPage = array_slice($users, $offset, $paginate, true);
-        $commentPagination = new LengthAwarePaginator($itemForCurrentPage, count($users), $paginate, $page);
+        $usersPagination = new LengthAwarePaginator($itemForCurrentPage, count($users), $paginate, $page);
         
-        $commentPagination->setPath($unit_id);
-        return view('dashboard.usersUnitsPer', ['users' => $commentPagination]);
+        $usersPagination->setPath($unit_two_id);
+        return view('dashboard.usersUnitsPer', ['users' => $usersPagination]);
     }
 }

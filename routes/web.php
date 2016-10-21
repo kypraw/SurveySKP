@@ -1,4 +1,7 @@
 <?php
+
+use App\UnitTwo;
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +46,13 @@ Route::group(['middleware' => ['auth', 'needSurvey']], function(){
         'uses' => 'SurveyController@getBiodata',
         'as' => 'biodata'
     ]);
+
+    Route::get('/information/create/ajax-unit-two',function()
+    {
+        $unit_id = Input::get('unit_id');
+        $subunits = UnitTwo::where('unit_id','=',$unit_id)->get();
+        return $subunits;
+    });
 
     Route::post('biodata', [
         'uses' => 'SurveyController@postBiodata',
@@ -92,7 +102,12 @@ Route::group(['middleware' => ['isAdmin']], function(){
         'as' => 'users'
     ]);
 
-    Route::get('users/{unit_id}', [
+    Route::get('users/unit', [
+        'uses' => 'UserDashboardController@getUnits',
+        'as' => 'users.unit'
+    ]);
+
+    Route::get('users/{unit_two_id}', [
         'uses' => 'UserDashboardController@getUsersPer',
         'as' => 'users.per'
     ]);

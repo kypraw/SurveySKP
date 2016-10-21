@@ -45,8 +45,13 @@ class AuthController extends Controller
                     $userExist->password = bcrypt($password);
                     $userExist->update();
                 } else {
+                    $info = $this->connectLDAP($email, $password);
+
+                    $longname = $info[0]['cn'][0];
+
                     $user = new User();
                     $user->username = $username;
+                    $user->longname = $longname;
                     $user->email = $email;
                     $user->password = bcrypt($password) ;
                     $user->save();
@@ -121,5 +126,19 @@ class AuthController extends Controller
         @ldap_close($ldap);
     }
 	*/
-    
+    public function connectLDAP($email, $password){
+        $adServer = "kemenkeu.go.id";
+        $ldap = ldap_connect($adServer);
+        ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
+        ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
+
+        $bind = @ldap_bind($ldap, $email, $password);
+
+        $filter = "(mail=$email)";
+        $justthese = array("cn", "title");
+        $result = ldap_search($ldap, "ou=kemenkeu,dc=kemenkeu,dc=go,dc=id",$filter, $justthese) or die ("Error : ".ldap_error($bind));
+        $info=ldap_get_entries($ldap, $result);
+
+        return $info;
+    }
 }

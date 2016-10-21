@@ -24,7 +24,9 @@ class DashboardController extends Controller
             array_push($labelsid, $survey->id);
             array_push($data, (float)($survey->averageScore));  
         }
-
+        if (count($data) == 0){
+            return view('dashboard.surveyEmpty');
+        }
         return view('dashboard.dashboardLayanan',['surveys'=>$surveys,'average'=> array_sum($data) / count($data) ,'labelsid'=>json_encode($labelsid), 'data' => json_encode($data)]);
     }
 
@@ -35,7 +37,7 @@ class DashboardController extends Controller
         LEFT JOIN answers ON answers.question_id = questions.id
         WHERE surveys.id = ? GROUP BY pertanyaan ORDER BY averageScore DESC ", [$layanan_id]);
         
-        $surveyComment = DB::select("SELECT username, komentar, comments.created_at 
+        $surveyComment = DB::select("SELECT longname, komentar, comments.created_at 
         FROM surveys LEFT JOIN comments ON comments.survey_id = surveys.id LEFT JOIN users ON users.id = comments.user_id
         WHERE surveys.id = ? ORDER BY CHAR_LENGTH(komentar) DESC", [$layanan_id]);
 

@@ -1,14 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
-    <h3>Silahkan isi survey dibawah ini</h3>
+    <h3>Sebelum mengisi survey yang Anda pilih, mohon memberikan penilaian terhadap pelayanan yang diberikan oleh Service Desk Pusintek</h3>
     
     <form action="{{route('answers.post')}}" id="survey" method=post>
-        
-        <p id="right-align">STP = Sangat Tidak Puas, TP = Tidak Puas, KP = Kurang Puas, P = Puas, SP = Sangat Puas
         <div class="panel panel-default">
         <div class="panel-heading"><p class="title">{{$serviceDesk[0]->title}}
-        <p>{{$serviceDesk[0]->deskripsi}}</p>
+        <p><?php echo($serviceDesk[0]->deskripsi)?></p>
         </div>
             <div class="panel-body">
             <?php $i=0 ?>
@@ -19,7 +17,7 @@
                         <?php if($i == 1){
                             echo("<br>");
                         } ?>
-                        <p>{{$g->pertanyaan}}
+                        <p><?php echo($g->pertanyaan); ?>
                     </div>
                     <div class="col-md-3 radio-button">
                         <fieldset id="{{$g->id}}">
@@ -45,6 +43,7 @@
                     </div>
                 </div>
             @endforeach
+            <strong><p id="right-align">STP = Sangat Tidak Puas, TP = Tidak Puas, KP = Kurang Puas, P = Puas, SP = Sangat Puas</strong>
                 <div class="form-group col-md-9">
                     <label for="comment">Komentar (Wajib diisi):</label>
                     <textarea class="form-control" rows="5" name="komentar[{{$serviceDesk[0]->survey_id}}]" required></textarea>
@@ -52,11 +51,12 @@
             </div>
         </div>
 
+        <h3>Silahkan isi Survey di bawah ini</h3>
+
         @foreach($grouped as $group)
-        <p id="right-align">STP = Sangat Tidak Puas, TP = Tidak Puas, KP = Kurang Puas, P = Puas, SP = Sangat Puas
         <div class="panel panel-default">
         <div class="panel-heading"><p class="title">{{$group[0]->survey_id . ". " . $group[0]->title}}
-        <p>{{$group[0]->deskripsi}}</p>
+        <p><?php echo($group[0]->deskripsi)?></p>
         </div>
             <div class="panel-body">
             <?php $i=0 ?>
@@ -67,7 +67,7 @@
                         <?php if($i == 1){
                             echo("<br>");
                         } ?>
-                        <p>{{$g->pertanyaan}}
+                        <p><?php echo($g->pertanyaan); ?>
                     </div>
                     <div class="col-md-3 radio-button">
                         <fieldset id="{{$g->id}}">
@@ -93,6 +93,7 @@
                     </div>
                 </div>
             @endforeach
+            <strong><p id="right-align">STP = Sangat Tidak Puas, TP = Tidak Puas, KP = Kurang Puas, P = Puas, SP = Sangat Puas</strong>
                 <div class="form-group col-md-9">
                     <label for="comment">Komentar (Wajib diisi):</label>
                     <textarea class="form-control" rows="5" name="komentar[{{$group[0]->survey_id}}]" required></textarea>

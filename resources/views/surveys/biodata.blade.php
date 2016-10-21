@@ -5,7 +5,7 @@
     <div class="col-md-4 col-md-offset-4">
         <form action="{{route('biodata.post')}}" method="post">
             <div class="form-group">
-            <label for="unit">Unit Kerja</label>
+            <label for="unit">Eselon I</label>
             <select class="form-control" name="unit" id="unit">
             @foreach($units as $unit)
                 @if($unit->unitLong == "Sekretariat Jenderal")
@@ -14,6 +14,11 @@
                 <option value="{{$unit->id}}">{{$unit->unitLong}}</option>
                 @endif
             @endforeach 
+            </select>
+            </div>
+            <div class="form-group">
+            <label for="unit">Eselon II</label>
+            <select class="form-control" name="unit_two" id="unit_two">
             </select>
             </div>
             <div class="form-group">
@@ -45,4 +50,32 @@
     </div>
         </form>
     </div>
+@endsection
+
+@section('script')
+    <script>
+    $(function(){
+        a = document.getElementById("unit");
+        var unit_id = a.value;
+
+        $.get('/information/create/ajax-unit-two?unit_id=' + unit_id, function(data) {
+            $('#unit_two').empty();
+            $.each(data, function(index,unit_two){
+                $('#unit_two').append('<option value="' + unit_two.id + '">' + unit_two.eselon_dua + '</option>');
+            });
+        });
+    });
+
+    $('#unit').on('change', function(e){
+
+        var unit_id = e.target.value;
+
+        $.get('/information/create/ajax-unit-two?unit_id=' + unit_id, function(data) {
+            $('#unit_two').empty();
+            $.each(data, function(index,unit_two){
+                $('#unit_two').append('<option value="' + unit_two.id + '">' + unit_two.eselon_dua + '</option>');
+            });
+        });
+    });
+</script>
 @endsection

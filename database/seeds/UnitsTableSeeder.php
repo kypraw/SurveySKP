@@ -56,6 +56,10 @@ class UnitsTableSeeder extends Seeder
                 'unit' => 'BPPK',
                 'unitLong' => 'Badan Pendidikan dan Pelatihan Keuangan'
             ],
+            [
+                'unit' => '-',
+                'unitLong' => '-'
+            ],
         ]);
     }
 }

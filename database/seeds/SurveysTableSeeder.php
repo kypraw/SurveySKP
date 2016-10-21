@@ -34,11 +34,11 @@ class SurveysTableSeeder extends Seeder
             ],
             [
                 'title'     => 'Layanan Pengembangan Interkoneksi Infrastruktur',
-                'deskripsi' => 'Penyediaan koneksi antara Pusintek dengan Kantor Pusat Pelanggan dan/atau unit vertikal di daerah'
+                'deskripsi' => 'Layanan penyediaan koneksi antara Pusintek dengan Unit Eselon I (Kantor Pusat dan/atau vertikal), atau Pusintek dengan instansi lain yang bekerja sama dengan Kementerian Keuangan'
             ],
             [
                 'title'     => 'Layanan Pengembangan Infrastruktur LAN Unit Pengguna',
-                'deskripsi' => 'Layanan pengembangan jaringan LAN'
+                'deskripsi' => 'Layanan pengembangan jaringan LAN bagi pegawai Kementerian Keuangan'
             ],
             [
                 'title'     => 'Layanan Pengembangan dan Pembangunan Sistem TIK',
@@ -46,7 +46,7 @@ class SurveysTableSeeder extends Seeder
             ],
             [
                 'title'     => 'Layanan Uji Kelayakan Sistem Aplikasi',
-                'deskripsi' => 'Layanan yang disediakan untuk menguji tingkat kerentanan dan ketahan dari suatu aplikasi yang akan dihosting di Pusintek meliputi uji kerentanan dan stress test'
+                'deskripsi' => 'Layanan yang disediakan untuk menguji tingkat kerentanan dan ketahanan dari suatu aplikasi yang akan dihosting di Pusintek meliputi uji kerentanan dan stress test'
             ],
             [
                 'title'     => 'Layanan Koneksi Internet',
@@ -93,8 +93,8 @@ class SurveysTableSeeder extends Seeder
                 'deskripsi' => 'Layanan dukungan informasi, mencakup layanan informasi Pusintek dan layanan informasi aplikasi/infrastruktur milik atau yang dikelola Pusintek(CMDB)'
             ],
             [
-                'title'     => 'Layanan Service Desk',
-                'deskripsi' => 'Fungsi single point of contact (SPOC) yang memberikan dukungan layanan bagi pengguna terkait layanan dan gangguan TIK'
+                'title'     => 'Service Desk Pusintek',
+                'deskripsi' => 'Fungsi Single Point Of Contact(SPOC) yang memberikan dukungan layanan bagi pengguna terkait layanan dan gangguan TIK'
             ]
         ]);
     }

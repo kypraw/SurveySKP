@@ -20,10 +20,10 @@ class AnswerController extends Controller
         $comments = $request['komentar']; 
         $user = $request->user();
         
-        $user->unit_id = (int)$biodata['unit'];
+        $user->unit_two_id = (int)$biodata['unit_two'];
         $user->jabatan_id = (int)$biodata['jabatan'];
         $user->lokasi_id = (int)$biodata['lokasi'];
-        //$user->isDone = 1;
+        $user->isDone = 1;
         $user->save();
 
         foreach($answers as $question_number => $answer){

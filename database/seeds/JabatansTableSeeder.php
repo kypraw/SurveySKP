@@ -13,6 +13,9 @@ class JabatansTableSeeder extends Seeder
     {
         DB::table('jabatans')->insert([
             [
+                'jabatan' => 'Staf Ahli Menteri'
+            ],
+            [
                 'jabatan' => 'Eselon I'
             ],
             [

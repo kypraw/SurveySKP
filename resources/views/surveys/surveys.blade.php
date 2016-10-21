@@ -80,6 +80,7 @@
             <li>Pengisian survey hanya dilaksanakan satu kali.</li>
             <li>Silahkan pilih semua layanan yang pernah Bapak/Ibu gunakan dengan cara mencentang checkbox atau mengklik nama layanan.</li>
             <li>Klik tombol Next jika telah selesai memilih.</li>
+            <li>Sebelum mengisi survey yang Anda pilih, mohon memberikan penilaian terhadap pelayanan yang diberikan oleh Service Desk Pusintek</li>
             <li>Silahkan isi survey pada halaman berikutnya.</li>
             <li>Untuk informasi lebih detail dari masing-masing layanan silahkan <a href="{{URL::to('/SC2016.pdf')}}" target="_blank">klik disini</a></li>
         </ol>
