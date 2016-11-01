@@ -29,7 +29,7 @@ class UserDashboardController extends Controller
     }
 
     public function getUsersPer($unit_two_id){
-        $users = DB::select("SELECT email, longname FROM users WHERE users.unit_two_id = ? AND users.isDone = 1 ORDER BY username", [$unit_two_id]);
+        $users = DB::select("SELECT id, email, longname FROM users WHERE users.unit_two_id = ? AND users.isDone = 1 ORDER BY username", [$unit_two_id]);
 
         $paginate = 10;
         $page = Input::get('page', 1);
@@ -40,5 +40,14 @@ class UserDashboardController extends Controller
         
         $usersPagination->setPath($unit_two_id);
         return view('dashboard.usersUnitsPer', ['users' => $usersPagination]);
+    }
+    
+    public function getUser($user_id){
+        $answers = DB::select("SELECT title, pertanyaan, nilai FROM answers
+        LEFT JOIN questions ON question_id = questions.id
+        LEFT JOIN surveys ON survey_id = surveys.id
+        WHERE user_id = ? ORDER BY survey_id", [$user_id]);
+
+        return view('dashboard.userAnswers', ['answers' => $answers]);
     }
 }

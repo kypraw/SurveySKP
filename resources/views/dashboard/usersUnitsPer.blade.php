@@ -9,7 +9,7 @@
     </tr>
     @foreach($users as $user)
         <tr>
-            <td>{{$user->longname}}</td>
+            <td><a href="{{route('user', ['user_id' => $user->id])}}">{{$user->longname}}</a></td>
             <td>{{$user->email}}</td>
         </tr>
     @endforeach

@@ -9,8 +9,8 @@
         <th>Nilai</th>
     @foreach($surveyScore as $score)
         <tr>
-            <td>{{$score->pertanyaan}}</td>
-            <td id="right-align">{{$score->averageScore}}</td>
+            <td><?php echo($score->pertanyaan) ?></td>
+            <td id="right-align">{{number_format($score->averageScore, 2)}}</td>
         </tr>
     @endforeach
     </table>

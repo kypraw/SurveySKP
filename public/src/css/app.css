@@ -65,6 +65,10 @@ p#right-align{
     margin-right:10px;
 }
 
+div#error-msg p {
+    text-align: center;
+}
+
 table th{
     text-align: center;
     display: table-cell;

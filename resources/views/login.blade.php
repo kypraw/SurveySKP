@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
+
+@if($errors->any())
+<div class="col-md-4 col-md-offset-4" id="error-msg">
+    <p>{{$errors->first()}}
+</div>
+@endif
+
 <div class="col-md-4 col-md-offset-4">
 <form class="form-signin" method="post" action="{{ route('login.post') }}">
         <header class="text-center"><h2>Login</h2></header>

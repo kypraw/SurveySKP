@@ -63,7 +63,7 @@ class AuthController extends Controller
             }
             
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->withErrors(['Anda Salah Memasukkan Email/Password']);;
         }
 
         /* tidak memperhitungkan pergantian password

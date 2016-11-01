@@ -112,6 +112,11 @@ Route::group(['middleware' => ['isAdmin']], function(){
         'as' => 'users.per'
     ]);
 
+    Route::get('user/{user_id}', [
+        'uses' => 'UserDashboardController@getUser',
+        'as' => 'user'
+    ]);
+
     Route::get('jabatan',[
         'uses' => 'UserDashboardController@getJabatan',
         'as' => 'dashboard.byJabatan'

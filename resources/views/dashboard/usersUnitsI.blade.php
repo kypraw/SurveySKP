@@ -5,8 +5,7 @@
     <div class="row">
     
             <div class="col-md-8 col-md-offset-2">
-            <table id="layanan" class="table table-bordered table-hover">
-            <a href="{{route('dashboard.byJabatan')}}"><p id="right-align">By Jabatan</p></a> 
+            <table id="layanan" class="table table-bordered table-hover"> 
                 <th>Unit</th>
                 <th>Jumlah Responden</th>
                 @foreach($usersUnits as $usersUnit)                    
